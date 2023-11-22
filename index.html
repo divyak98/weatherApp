@@ -59,6 +59,11 @@
 
 
     <script>
+        if (navigator.geolocation){
+            navigator.geolocation.getCurrentPosition(function(position) {
+            document.getElementById('id111').innerHTML="latitude: " + position.coords.latitude + "<br>longitude: " + position.coords.longitude;
+          });
+        }
         const apiKey="f5eb2374c0eebcdb99591d805800226d";
         const apiUrl="https://api.openweathermap.org/data/2.5/weather?&units=metric&q=";
         const searchBox = document.querySelector(".search input");
